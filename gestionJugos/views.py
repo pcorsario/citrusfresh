@@ -12,6 +12,9 @@ from .models import Jugos
 # class ListarJugos(ListView):
 #     model = Jugos
 
-def index(request):
+def dashboard(request):
+    return render(request, 'jugos/dashboard.html')
+
+def jugos(request):
     jugos = Jugos.objects.all()
     return render(request, 'jugos/index.html', {'jugos': jugos})
